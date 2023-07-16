@@ -12,4 +12,5 @@ Route::post('logout', [AuthController::class, 'logout']);
 Route::middleware('auth:sanctum')->group(function () {
   Route::post('/documents', [DocumentController::class, 'upload']);
   Route::get('/documents/{id}', [DocumentController::class, 'download']);
+  Route::get('/documents', [DocumentController::class, 'index']);
 });
