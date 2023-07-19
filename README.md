@@ -1,3 +1,6 @@
+
+<img width="398" alt="Screenshot 2023-07-19 at 18 05 53" src="https://github.com/ivayloap/docstore_backend/assets/5279266/ebce8a9e-b8cd-401d-ac84-60c9d70b3a91">
+
 ## Docstore Backend
 
 Docstore Backend is API for PDF File Storage with User Registration
