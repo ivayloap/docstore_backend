@@ -53,13 +53,11 @@ php artisan serve
 
 You're ready to go! Access the API at http://localhost:8000.
 
-Project Description
-This Laravel API project provides endpoints for PDF file storage and user registration. It allows users to upload, retrieve, update, and delete PDF files securely. Additionally, it provides user registration endpoints for user account creation and authentication.
-
 Features
-User registration and authentication
-Securely store and manage PDF files
-Upload, retrieve, update, and delete PDF files
-API endpoints for user and file management
-Integration with PostgreSQL for robust data storage
+- User registration and authentication
+- Securely store and manage PDF files
+- Upload, retrieve, update, and delete PDF files
+- API endpoints for user and file management
+- Integration with PostgreSQL for robust data storage
+
 Please refer to the project's API documentation for detailed information on the available endpoints and their usage.
