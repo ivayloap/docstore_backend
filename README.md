@@ -1,7 +1,9 @@
-
-<img width="398" alt="Screenshot 2023-07-19 at 18 05 53" src="https://github.com/ivayloap/docstore_backend/assets/5279266/ebce8a9e-b8cd-401d-ac84-60c9d70b3a91">
-
 ## Docstore Backend
+
+<p align="left">
+  <img width="512" alt="Screenshot 2023-07-19 at 18 20 09" src="https://github.com/ivayloap/docstore_backend/assets/5279266/11dda3fa-fe61-4f3f-a035-60a0e2cc9325">
+</p>
+
 
 Docstore Backend is API for PDF File Storage with User Registration
 This is a Laravel-based API project designed to store PDF files and provide user registration functionality. The project uses PostgreSQL as the database management system.
