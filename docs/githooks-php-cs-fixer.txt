@@ -1,0 +1,22 @@
+##
+#touch .git/hooks/pre-commit
+#chmod +x .git/hooks/pre-commit
+##
+
+
+#!/bin/bash
+
+# Stash any unstaged changes before running PHP-CS-Fixer
+git stash -q --keep-index
+
+# Run PHP-CS-Fixer to check the code style
+./vendor/bin/php-cs-fixer fix --dry-run --using-cache=no
+
+# Capture the exit code of the previous command
+EXIT_CODE=$?
+
+# Pop the stashed changes (if any)
+git stash pop -q
+
+# Exit with the captured exit code
+exit $EXIT_CODE
