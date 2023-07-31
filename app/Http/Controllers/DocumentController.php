@@ -7,35 +7,34 @@ use App\Models\Document;
 
 class DocumentController extends Controller
 {
+    protected $documentsService;
+
+    public function __construct(DocumentsService $documentsService)
+    {
+        $this->documentsService = $documentsService;
+    }
+
     public function upload(Request $request)
     {
-        $user = $request->user();
-
         $request->validate([
             'file' => 'required|mimes:pdf|max:50000',
         ]);
 
+        $user = $request->user();
         $file = $request->file('file');
-        $filename = $file->getClientOriginalName();
 
-        $filePath = $file->storeAs('documents', $filename);
-
-        $document = new Document;
-        $document->name = $filename;
-        $document->file_path = $filePath;
-        $document->user_id = $user->id;
-        $document->save();
+        $document = $this->documentsService->upload($file, $user->id);
 
         return response()->json(['id' => $document->id], 201);
     }
 
     public function download(Request $request, $id)
     {
-        $user = $request->user(); // Access the authenticated user
+        $user = $request->user();
 
-        $document = Document::findOrFail($id);
+        $document = $this->documentsService->download($id, $user->id);
 
-        if($user->id != $document->user_id){
+        if (!$document) {
             return response()->json(['error' => 'Forbidden'], 403);
         }
 
@@ -43,6 +42,7 @@ class DocumentController extends Controller
 
         return response()->download($filePath, $document->name);
     }
+
 
     public function index(Request $request)
     {

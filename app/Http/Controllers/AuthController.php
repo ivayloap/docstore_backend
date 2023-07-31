@@ -25,6 +25,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        eval(\psy\sh());
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
